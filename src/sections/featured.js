@@ -110,10 +110,11 @@ const Featured = () => {
         />
         <Box sx={styles.tabButtonTopWrapper}>
           <Box sx={styles.tabButtonWrapper}>
-            {Object.keys(dataMap).map((item) => (
+            {Object.keys(dataMap).map((item, idx) => (
               <Button
                 onClick={() => handleTab(item)}
                 className={`${tab.active === item ? "active" : ""}`}
+                key={idx}
               >
                 <FaSchool />
                 {getLabel(item)}
