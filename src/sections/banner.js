@@ -10,15 +10,16 @@ import bannerIcon5 from "assets/banner-icon-1-5.svg";
 import bannerIcon6 from "assets/banner-icon-1-6.svg";
 import bannerIcon7 from "assets/dot-pattern.svg";
 
+import slide1 from "assets/slide-1.jpg";
+import slide2 from "assets/slide-2.jpg";
+import slide3 from "assets/slide-3.jpg";
+
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 SwiperCore.use([Autoplay]);
 
-const IMAGES = [
-  "http://shumpunfoundation.org/images/slide-01-1920x810.jpg",
-  "http://shumpunfoundation.org/images/slide-03-1920x810.jpg",
-];
+const IMAGES = [slide1, slide2, slide3];
 
 const ImageCarousel = () => {
   const config = {

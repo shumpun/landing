@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Container, Flex, Text, Heading, Image } from "theme-ui";
 import { Link } from "components/link";
+import aboutUs from "assets/about-us.jpg";
 
 const CallToAction = () => {
   return (
@@ -23,12 +24,7 @@ const CallToAction = () => {
             </Link>
           </Box>
           <Box sx={styles.images}>
-            <Image
-              src={
-                "http://shumpunfoundation.org/images/Home/home-01-620-351.jpg"
-              }
-              alt="call image"
-            />
+            <Image src={aboutUs} alt="call image" />
           </Box>
         </Flex>
       </Container>
