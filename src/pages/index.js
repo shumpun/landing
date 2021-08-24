@@ -22,14 +22,14 @@ export default function IndexPage() {
         <Layout>
           <SEO title="Shumpun Foundation" />
           <Banner />
-          {/* <Services /> */}
-          {/* <Jackpot /> */}
+          {/* <Services />
+          <Jackpot /> */}
           <CallToAction />
           <Featured />
           {/* <Pricing /> */}
           <Testimonials />
-          <Blogs />
-          <FAQ />
+          {/* <Blogs />
+          <FAQ /> */}
           <Subscribe />
         </Layout>
       </StickyProvider>

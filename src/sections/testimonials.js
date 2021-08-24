@@ -4,19 +4,19 @@ import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import BlockTitle from "components/block-title";
 import TestimonialsCard from "components/cards/testimonial-card";
-import testimonialsImage1 from "assets/testimonial-1-1.png";
-import testimonialsImage2 from "assets/testimonial-1-2.png";
+import test1 from "assets/testimonials/1.jpeg";
+import test2 from "assets/testimonials/2.jpeg";
 
 SwiperCore.use([Autoplay]);
 
 const TESTIMONIALS_DATA = [
   {
-    image: "http://shumpunfoundation.org/images/users/review1.jpg",
+    image: test1,
     text: "Sayangbrita Das, my daughter was diagnosed with ADHD and social communication disorder when she was 4 years old. She was very much restless, couldn't sit at any place for not even 5 minutes earlier. Today she is studying in class 9 and becomes so calm, obedient and empathetic, as she is doing quite well with her studies. Today she is completely different from what she was in her childhood. I am very much thankful to Shumpun Foundation, for my daughter's such behavioural development.",
     name: "Swagata - Mother",
   },
   {
-    image: "http://shumpunfoundation.org/images/users/review2.jpg",
+    image: test2,
     text: "I was diagnosed with ASD at the age of 3 years. I worked with Shumpun Foundation since 2008 to 2018, with the Special Educator along with the drama therapist. Through all these interventions, I have learned to make friends and to work together with other people. At present I am doing my graduation in mainstream.",
     name: "Hritam - Ex Student",
   },
@@ -151,7 +151,7 @@ export default Testimonials;
 const styles = {
   testimonials: {
     backgroundColor: "#F4F4F6",
-    pt: ["250px", null, null, null, "250px", null, "250px"],
+    pt: ["60px", null, null, null, "60px", null, "60px"],
     pb: ["60px", null, null, null, "80px", null, "120px"],
   },
 };

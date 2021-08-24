@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, Container, Image, Heading } from "theme-ui";
 import { keyframes } from "@emotion/core";
-import bannerImage from "assets/banner-mockup.png";
 import bannerIcon1 from "assets/banner-icon-1-1.svg";
 import bannerIcon2 from "assets/banner-icon-1-2.svg";
 import bannerIcon3 from "assets/banner-icon-1-3.svg";
