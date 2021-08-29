@@ -4,37 +4,45 @@ import { Link } from "../link";
 
 import arrowAngle from "../../assets/arrow-angle.svg";
 
-const BlogCard = ({ image, title, description, path, linkLabel, person }) => {
+const EventCard = ({
+  image,
+  title,
+  description,
+  path,
+  linkLabel,
+  person,
+  Dat,
+}) => {
   return (
     <Box
       sx={styles.blogCard}
-      className={`blogCard ${image ? "noThumb " : " "} ${
-        description ? "noDescription  " : ""
-      } ${linkLabel ? "noLabel " : ""}`}
+      className={`blogCard ${image === null ? "noThumb " : " "} ${
+        description === null ? "noDescription  " : ""
+      } ${linkLabel === null ? "noLabel " : ""}`}
     >
-      {image && (
+      {image !== null && (
         <Box sx={styles.image}>
           <Image src={image} alt={title} />
         </Box>
       )}
-
       <Box sx={styles.content} className="blogContent">
         <Heading as="h3">
           <Link path={path}>{title}</Link>
         </Heading>
-        {description && <Text as="p">{description}</Text>}
-        {linkLabel && (
+        {description !== null && <Text as="p">{description}</Text>}
+        {person !== null && <Text as="p">{person}</Text>}
+        {Dat != null && <Text as="p">{Dat}</Text>}
+        {linkLabel !== null && (
           <Link sx={styles.linkLabel} path={path}>
             {linkLabel} <Image src={arrowAngle} alt="angle icon" />
           </Link>
         )}
-        {person !== null && <Text as="p">{person}</Text>}
       </Box>
     </Box>
   );
 };
 
-export default BlogCard;
+export default EventCard;
 
 const styles = {
   blogCard: {
@@ -42,6 +50,8 @@ const styles = {
     overflow: "hidden",
     mb: 30,
     mx: 15,
+    backgroundColor: "#F4F4F6",
+    borderRadius: "5px",
     width: [
       "calc(100% - 30px)",
       "calc(100% - 30px)",
@@ -92,6 +102,7 @@ const styles = {
     },
   },
   content: {
+    padding: "10px 20px",
     h3: {
       fontSize: "18px",
       color: "#0F2137",

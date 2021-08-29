@@ -2,53 +2,62 @@ import React from "react";
 import { Container, Box, Grid } from "theme-ui";
 import Masonry from "react-masonry-component";
 import BlockTitle from "components/block-title";
-import BlogCard from "components/cards/blog-card";
+import BlogCard from "components/cards/event-card";
 
-import blogImage1 from "assets/blog-1-1.png";
-import blogImage2 from "assets/blog-1-2.png";
-import blogImage3 from "assets/blog-1-3.png";
-import blogImage4 from "assets/blog-1-4.png";
+import blogImage1 from "assets/events/2.jpeg";
+import blogImage2 from "assets/events/2.jpeg";
+import blogImage3 from "assets/events/3.jpeg";
+import blogImage4 from "assets/events/4.jpeg";
+import blogImage5 from "assets/events/5.jpeg";
+import blogImage6 from "assets/events/6.jpeg";
 
 const BLOG_DATA = [
   {
     image: blogImage1,
-    title: "How to work with prototype design with adobe xd featuring tools",
-    description:
-      "The 2019 Innovation by Design Awards honor the designers and businesses solving the problems of today and tomorrow. It is one of the most sought-after design",
+    title: "Khelbo Nachbo Gorbo Re Digital Summer Camp'21",
     path: "/",
+    Dat: "5 July onwards 2021 ,7PM",
+    person: "Saptaparna Basu & Reeni Sengupta",
     linkLabel: "Learn More",
   },
   {
-    image: blogImage1,
-    title: "How to work with prototype design with adobe xd featuring tools",
-    description:
-      "The 2019 Innovation by Design Awards honor the designers and businesses solving the problems of today and tomorrow. It is one of the most sought-after design",
+    image: blogImage2,
+    title: "Khelbo Nachbo Gorbo Re Digital Summer Camp'21",
     path: "/",
+    Dat: "19th June 2021  ,7 P.M",
+    person: "Mr. Subhasis Sayed",
     linkLabel: "Learn More",
   },
   {
-    image: blogImage1,
-    title: "How to work with prototype design with adobe xd featuring tools",
-    description:
-      "The 2019 Innovation by Design Awards honor the designers and businesses solving the problems of today and tomorrow. It is one of the most sought-after design",
+    image: blogImage3,
+    title: "Digital Summer Camp'21",
     path: "/",
-    linkLabel: "Learn More",
-    person: "sachet",
-  },
-  {
-    image: blogImage1,
-    title: "How to work with prototype design with adobe xd featuring tools",
-    description:
-      "The 2019 Innovation by Design Awards honor the designers and businesses solving the problems of today and tomorrow. It is one of the most sought-after design",
-    path: "/",
+    Dat: "15th June 2021 ,7 P.M",
+    person: "Mr. Sumit Mukherjee",
     linkLabel: "Learn More",
   },
   {
-    image: blogImage1,
-    title: "How to work with prototype design with adobe xd featuring tools",
-    description:
-      "The 2019 Innovation by Design Awards honor the designers and businesses solving the problems of today and tomorrow. It is one of the most sought-after design",
+    image: blogImage4,
+    title: "AKASH BHARA SURJO TARA (Digital Summer Camp'21)",
     path: "/",
+    Dat: "12th June 2021 , 7-8 P.M",
+    person: "Dr. Debi Prasad Duari",
+    linkLabel: "Learn More",
+  },
+  {
+    image: blogImage5,
+    title: "ADDA- O- Mon (Noticed & responded)",
+    path: "/",
+    Dat: "16th May 2021 ,8 P.M",
+    person: "Shari Lachin",
+    linkLabel: "Learn More",
+  },
+  {
+    image: blogImage6,
+    title: "Event Unlocking Knowledge",
+    path: "/",
+    Dat: "21 March 2021 ,6 P.M",
+    person: "Mr. Koushik Chatterjee",
     linkLabel: "Learn More",
   },
 ];
@@ -59,7 +68,7 @@ const masonryOptions = {
 
 const Blogs = () => {
   return (
-    <Box as="section" id="news" sx={styles.blogs}>
+    <Box as="section" id="events" sx={styles.blogs}>
       <Container>
         <BlockTitle
           title="Popular events post we updated"

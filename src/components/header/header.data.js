@@ -12,8 +12,16 @@ export default [
     label: "Programmes",
   },
   {
+    path: "news",
+    label: "News",
+  },
+  {
     path: "testimonials",
     label: "Testimonials",
+  },
+  {
+    path: "events",
+    label: "Events",
   },
   {
     path: "subscribe",
