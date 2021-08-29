@@ -33,6 +33,7 @@ const BLOG_DATA = [
       "The 2019 Innovation by Design Awards honor the designers and businesses solving the problems of today and tomorrow. It is one of the most sought-after design",
     path: "/",
     linkLabel: "Learn More",
+    person: "sachet",
   },
   {
     image: blogImage1,
@@ -61,22 +62,13 @@ const Blogs = () => {
     <Box as="section" id="news" sx={styles.blogs}>
       <Container>
         <BlockTitle
-          title="Popular blog post we updated"
+          title="Popular events post we updated"
           text="Updete newsfeed blog"
         />
         <Box as={Masonry} options={masonryOptions} sx={styles.blogWrapper}>
-          {BLOG_DATA.map(
-            ({ image, title, description, path, linkLabel }, index) => (
-              <BlogCard
-                key={index}
-                image={image}
-                title={title}
-                description={description}
-                path={path}
-                linkLabel={linkLabel}
-              />
-            )
-          )}
+          {BLOG_DATA.map((props, index) => (
+            <BlogCard key={index} {...props} />
+          ))}
         </Box>
       </Container>
     </Box>

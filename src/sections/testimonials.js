@@ -11,12 +11,12 @@ SwiperCore.use([Autoplay]);
 
 const TESTIMONIALS_DATA = [
   {
-    image: test1,
+    image: test2,
     text: "Sayangbrita Das, my daughter was diagnosed with ADHD and social communication disorder when she was 4 years old. She was very much restless, couldn't sit at any place for not even 5 minutes earlier. Today she is studying in class 9 and becomes so calm, obedient and empathetic, as she is doing quite well with her studies. Today she is completely different from what she was in her childhood. I am very much thankful to Shumpun Foundation, for my daughter's such behavioural development.",
     name: "Swagata - Mother",
   },
   {
-    image: test2,
+    image: test1,
     text: "I was diagnosed with ASD at the age of 3 years. I worked with Shumpun Foundation since 2008 to 2018, with the Special Educator along with the drama therapist. Through all these interventions, I have learned to make friends and to work together with other people. At present I am doing my graduation in mainstream.",
     name: "Hritam - Ex Student",
   },
@@ -130,13 +130,13 @@ const Testimonials = () => {
         text="Customer testimonial"
       />
       <Swiper {...testimonialCarousel}>
-        {TESTIMONIALS_DATA.map(({ image, text, name, username }, index) => (
-          <SwiperSlide key={index}>
+        {TESTIMONIALS_DATA.map(({ image, text, name, username }) => (
+          <SwiperSlide key={new Date().toDateString()}>
             <TestimonialsCard
               image={image}
               text={text}
               name={name}
-              key={index}
+              key={new Date().toDateString()}
               username={username}
             />
           </SwiperSlide>

@@ -12,6 +12,7 @@ import Featured from "sections/featured";
 import Pricing from "sections/pricing";
 import Testimonials from "sections/testimonials";
 import Blogs from "sections/blogs";
+import Events from "sections/events";
 import FAQ from "sections/faq";
 import Subscribe from "sections/subscribe";
 
@@ -27,9 +28,10 @@ export default function IndexPage() {
           <CallToAction />
           <Featured />
           {/* <Pricing /> */}
+          <Blogs />
           <Testimonials />
-          {/* <Blogs />
-          <FAQ /> */}
+          <Events />
+          <FAQ />
           <Subscribe />
         </Layout>
       </StickyProvider>
