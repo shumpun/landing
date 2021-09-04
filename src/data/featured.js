@@ -1,7 +1,7 @@
 export default {
   educational: {
     list: [
-      "Assessment of Early Learning and Developmental Skills",
+      "Assessment of Early Learning and Developmental Skills and something else",
       "Assessment of Educational Skills (Reading, Spelling, Writing and Math)",
       "Assessment of Life Skills",
     ],
