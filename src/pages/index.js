@@ -15,6 +15,7 @@ import Blogs from "sections/blogs";
 import Events from "sections/events";
 import FAQ from "sections/faq";
 import Subscribe from "sections/subscribe";
+// import Gallery from "sections/gallery";
 
 export default function IndexPage() {
   return (
@@ -31,6 +32,7 @@ export default function IndexPage() {
           <Blogs />
           <Testimonials />
           <Events />
+          {/* <Gallery /> */}
           <FAQ />
           <Subscribe />
         </Layout>

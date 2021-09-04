@@ -22,7 +22,10 @@ const EventCard = ({
     >
       {image !== null && (
         <Box sx={styles.image}>
-          <Image src={image} alt={title} />
+          <Image
+            src={`https://drive.google.com/uc?export=view&id=${image}`}
+            alt={title}
+          />
         </Box>
       )}
       <Box sx={styles.content} className="blogContent">
