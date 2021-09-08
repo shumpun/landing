@@ -1,16 +1,14 @@
 import React from "react";
+import moment from "moment";
 import { Box, Text, Heading, Image } from "theme-ui";
-import { Link } from "../link";
 
-import arrowAngle from "../../assets/arrow-angle.svg";
-
-const BlogCard = ({ image, title, description, path, linkLabel, person }) => {
+const NewsCard = ({ image, title, news, person, date }) => {
   return (
     <Box
       sx={styles.blogCard}
       className={`blogCard ${image ? "noThumb " : " "} ${
-        description ? "noDescription  " : ""
-      } ${linkLabel ? "noLabel " : ""}`}
+        news ? "noDescription  " : ""
+      } noLabel`}
     >
       {image && (
         <Box sx={styles.image}>
@@ -19,22 +17,18 @@ const BlogCard = ({ image, title, description, path, linkLabel, person }) => {
       )}
 
       <Box sx={styles.content} className="blogContent">
-        <Heading as="h3">
-          <Link path={path}>{title}</Link>
-        </Heading>
-        {description && <Text as="p">{description}</Text>}
-        {linkLabel && (
-          <Link sx={styles.linkLabel} path={path}>
-            {linkLabel} <Image src={arrowAngle} alt="angle icon" />
-          </Link>
-        )}
+        <Heading as="h3">{title}</Heading>
+        {news && <Text as="p">{news}</Text>}
         {person !== null && <Text as="p">{person}</Text>}
+        {date != null && (
+          <Text as="p">{moment(date).format("DD-MM-YYYY LT")}</Text>
+        )}
       </Box>
     </Box>
   );
 };
 
-export default BlogCard;
+export default NewsCard;
 
 const styles = {
   blogCard: {
@@ -89,6 +83,7 @@ const styles = {
       borderRadius: "5px",
       width: "100%",
       display: "block",
+      mb: "20px",
     },
   },
   content: {
@@ -97,7 +92,7 @@ const styles = {
       color: "#0F2137",
       lineHeight: 1.67,
       fontWeight: 700,
-      mt: "20px",
+      mt: "30px",
       mb: "15px",
       a: {
         color: "inherit",

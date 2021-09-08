@@ -2,23 +2,20 @@ import React from "react";
 import { Container, Box, Grid } from "theme-ui";
 import Masonry from "react-masonry-component";
 import BlockTitle from "components/block-title";
-import BlogCard from "components/cards/event-card";
+import NewsCard from "components/cards/news-card";
 
 const masonryOptions = {
   transitionDuration: 0,
 };
 
-const Blogs = ({ events = [] }) => {
+const Blogs = ({ news }) => {
   return (
-    <Box as="section" id="events" sx={styles.blogs}>
+    <Box as="section" id="news" sx={styles.blogs}>
       <Container>
-        <BlockTitle
-          title="Popular events post we updated"
-          text="Updete newsfeed blog"
-        />
+        <BlockTitle title="Recent News" text="Updated newsfeed" />
         <Box as={Masonry} options={masonryOptions} sx={styles.blogWrapper}>
-          {events.map((props, index) => (
-            <BlogCard key={index} {...props} />
+          {news?.map((item, index) => (
+            <NewsCard key={index} {...item} />
           ))}
         </Box>
       </Container>

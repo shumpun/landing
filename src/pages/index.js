@@ -10,14 +10,27 @@ import Jackpot from "sections/jackpot";
 import CallToAction from "sections/call-to-action";
 import Featured from "sections/featured";
 import Pricing from "sections/pricing";
+import News from "sections/news";
 import Testimonials from "sections/testimonials";
-import Blogs from "sections/blogs";
 import Events from "sections/events";
 import FAQ from "sections/faq";
 import Subscribe from "sections/subscribe";
+import { firestore, postToJSON } from "../../lib/firebase";
 // import Gallery from "sections/gallery";
 
-export default function IndexPage() {
+export async function getServerSideProps() {
+  const eventsQuery = firestore.collection("events").orderBy("date", "desc");
+  const newsQuery = firestore.collection("news").orderBy("date", "desc");
+
+  const events = (await eventsQuery.get()).docs.map(postToJSON);
+  const news = (await newsQuery.get()).docs.map(postToJSON);
+
+  return {
+    props: { events, news },
+  };
+}
+
+export default function IndexPage({ events, news }) {
   return (
     <ThemeProvider theme={theme}>
       <StickyProvider>
@@ -29,9 +42,9 @@ export default function IndexPage() {
           <CallToAction />
           <Featured />
           {/* <Pricing /> */}
-          <Blogs />
+          <News news={news} />
           <Testimonials />
-          <Events />
+          <Events events={events} />
           {/* <Gallery /> */}
           <FAQ />
           <Subscribe />

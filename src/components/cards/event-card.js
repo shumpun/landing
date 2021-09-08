@@ -1,44 +1,27 @@
+import moment from "moment";
 import React from "react";
 import { Box, Text, Heading, Image } from "theme-ui";
 import { Link } from "../link";
 
-import arrowAngle from "../../assets/arrow-angle.svg";
-
-const EventCard = ({
-  image,
-  title,
-  description,
-  path,
-  linkLabel,
-  person,
-  Dat,
-}) => {
+const EventCard = ({ image, title, description, person, date }) => {
   return (
     <Box
       sx={styles.blogCard}
       className={`blogCard ${image === null ? "noThumb " : " "} ${
         description === null ? "noDescription  " : ""
-      } ${linkLabel === null ? "noLabel " : ""}`}
+      } noLabel`}
     >
       {image !== null && (
         <Box sx={styles.image}>
-          <Image
-            src={`https://drive.google.com/uc?export=view&id=${image}`}
-            alt={title}
-          />
+          <Image src={image} alt={title} />
         </Box>
       )}
       <Box sx={styles.content} className="blogContent">
-        <Heading as="h3">
-          <Link path={path}>{title}</Link>
-        </Heading>
+        <Heading as="h3">{title}</Heading>
         {description !== null && <Text as="p">{description}</Text>}
         {person !== null && <Text as="p">{person}</Text>}
-        {Dat != null && <Text as="p">{Dat}</Text>}
-        {linkLabel !== null && (
-          <Link sx={styles.linkLabel} path={path}>
-            {linkLabel} <Image src={arrowAngle} alt="angle icon" />
-          </Link>
+        {date != null && (
+          <Text as="p">{moment(date).format("DD-MM-YYYY LT")}</Text>
         )}
       </Box>
     </Box>
