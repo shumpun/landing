@@ -24,6 +24,10 @@ export default [
     label: "Events",
   },
   {
+    path: "faq",
+    label: "FAQ's",
+  },
+  {
     path: "subscribe",
     label: "Subscribe",
   },

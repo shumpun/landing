@@ -1,9 +1,9 @@
 import React from "react";
 import { Box, Text, Heading, Image } from "theme-ui";
-const TestimonialsCard = ({ image, text, name }) => {
+const TestimonialsCard = ({ image, content, name }) => {
   return (
     <Box sx={styles.testimonialsCard}>
-      <Text as="p">{text}</Text>
+      <Text as="p">{content}</Text>
       <Box sx={styles.testimonialsInfo}>
         <Box sx={styles.testimonialsImage}>
           <Image src={image} alt={name} sx={styles.image} />

@@ -1,89 +1,74 @@
 import React, { useState } from "react";
-import Datetime from "react-datetime";
-import { Label, Input, Button, Box } from "theme-ui";
-import "react-datetime/css/react-datetime.css";
+
+import { Button, Textarea, Input, Box, Label } from "theme-ui";
+
 import toast from "react-hot-toast";
 import { firestore, storage } from "../../../lib/firebase";
 import withAdminAuth from "../../../lib/withAdminAuth";
 
-const Events = () => {
-  const [title, setTitle] = useState("");
-  const [person, setPerson] = useState("");
-  const [eventImage, setEventImage] = useState(null);
-  const [selectedDate, setSelectedDate] = useState(null);
+const Testimonials = () => {
+  const [content, setContent] = useState("");
+  const [name, setName] = useState("");
+  const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const uploadRef = storage.ref(`events/${eventImage.name}`);
-    await uploadRef.put(eventImage);
+    const uploadRef = storage.ref(`testimonials/${image.name}`);
+    await uploadRef.put(image);
 
     const imageUrl = await uploadRef.getDownloadURL();
 
-    await firestore.collection("events").add({
-      title,
-      person,
-      date: selectedDate.toDate(),
+    await firestore.collection("testimonials").add({
+      content,
+      name,
       image: imageUrl,
+      date: new Date(),
     });
 
-    setTitle("");
-    setPerson("");
-    setSelectedDate(null);
-    setEventImage(null);
-    setLoading(true);
+    setContent("");
+    setName("");
+    setImage(null);
+    setLoading(false);
 
-    toast.success("Event created!");
+    toast.success("Testimonial created!");
   };
 
   const handleFileChange = ({ target: { files } }) => {
-    setEventImage(files[0]);
+    setImage(files[0]);
   };
 
-  const isValidForm = () => {
-    return !!title && !!person && !!eventImage && !!selectedDate;
-  };
+  const isValidForm = () => !!content && !!name && !!image;
 
   return (
-    <Box as="form" sx={styles.forms} onSubmit={handleSubmit}>
-      <Label htmlFor="title">
-        Title
+    <Box sx={styles.forms} as="form" onSubmit={handleSubmit}>
+      <Label htmlFor="name">
+        Name
         <Input
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          id="title"
-          type="text"
-          placeholder="title"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          id="name"
+          placeholder="Person Name"
         />
       </Label>
-      <Label htmlFor="person">
-        Person
-        <Input
-          value={person}
-          onChange={(e) => setPerson(e.target.value)}
-          id="person"
-          type="text"
-          placeholder="Person"
+
+      <Label htmlFor="content">
+        Testimonial
+        <Textarea
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+          id="content"
+          placeholder="Testimonial"
         />
       </Label>
-      <Label htmlFor="date">
-        Date
-        <Datetime
-          value={selectedDate}
-          inputProps={{
-            style: { padding: "10px", borderRadius: "5px" },
-            placeholder: "Enter a date",
-          }}
-          onChange={(date) => setSelectedDate(date)}
-        />
-      </Label>
-      <Label htmlFor="event-image">
-        Choose a profile picture:
+
+      <Label htmlFor="image">
+        Choose a picture:
         <Input
           onChange={handleFileChange}
           type="file"
-          id="event-image"
+          id="image"
           accept="image/png, image/jpeg"
         />
       </Label>
@@ -93,7 +78,7 @@ const Events = () => {
         variant="primary"
         sx={styles.button}
       >
-        {loading ? "Loading..." : "Add new event"}
+        {loading ? "Loading..." : "Add new testimonail"}
       </Button>
     </Box>
   );
@@ -142,6 +127,7 @@ const styles = {
     },
     textarea: {
       borderColor: "gray",
+      ml: "50px",
       "&:focus": {
         borderColor: "primary",
         boxShadow: "0 0 0 2px #000",
@@ -154,4 +140,4 @@ const styles = {
   },
 };
 
-export default withAdminAuth(Events);
+export default withAdminAuth(Testimonials);

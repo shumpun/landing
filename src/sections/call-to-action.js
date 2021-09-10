@@ -19,9 +19,9 @@ const CallToAction = () => {
               emotional and cognitive impairments through arts, education,
               research and community engagement.
             </Text>
-            <Link path="#" sx={styles.button}>
+            {/* <Link path="#" sx={styles.button}>
               Explore More
-            </Link>
+            </Link> */}
           </Box>
           <Box sx={styles.images}>
             <Image src={aboutUs} alt="call image" />

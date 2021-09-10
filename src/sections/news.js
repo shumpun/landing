@@ -12,7 +12,7 @@ const Blogs = ({ news }) => {
   return (
     <Box as="section" id="news" sx={styles.blogs}>
       <Container>
-        <BlockTitle title="Recent News" text="Updated newsfeed" />
+        <BlockTitle title="Recent News" text="spotlight" />
         <Box as={Masonry} options={masonryOptions} sx={styles.blogWrapper}>
           {news?.map((item, index) => (
             <NewsCard key={index} {...item} />

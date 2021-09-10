@@ -1,7 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Input, Box, Container, Heading, Text } from "theme-ui";
+import { firestore } from "../../lib/firebase";
+import { toast } from "react-hot-toast";
 
 const Subscribe = () => {
+  const [email, setEmail] = useState("");
+  const [isSubscribed, setIsSubscribed] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (email) {
+      await firestore.collection("subscribes").add({
+        email,
+        date: new Date(),
+      });
+    }
+
+    toast.success("Subscribed successfully!");
+    setIsSubscribed(true);
+  };
+
   return (
     <Box as="section" id="subscribe" sx={styles.subscribe}>
       <Container>
@@ -9,17 +28,15 @@ const Subscribe = () => {
         <Text as="p">
           By subscribing with your mail, you will accept our privacy policy
         </Text>
-        <Box as="form" sx={styles.form}>
-          <Box as="label" htmlFor="subscribeEmail" variant="styles.srOnly">
-            Email
-          </Box>
+        <Box as="form" onSubmit={handleSubmit} sx={styles.form}>
           <Input
             placeholder="Enter your email"
             type="email"
-            id="subscribeEmail"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             sx={styles.input}
           />
-          <Button type="submit" sx={styles.button}>
+          <Button type="submit" disabled={isSubscribed} sx={styles.button}>
             Subscribe us
           </Button>
         </Box>
@@ -93,6 +110,11 @@ const styles = {
     "&:hover": {
       backgroundColor: "#fff",
       opacity: "0.8",
+    },
+    "&:disabled": {
+      backgroundColor: "#fff",
+      opacity: "0.8",
+      cursor: "not-allowed",
     },
   },
 };

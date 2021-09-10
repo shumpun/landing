@@ -1,4 +1,5 @@
 import { auth, googleAuthProvider } from "../../../lib/firebase";
+import { Button } from "theme-ui";
 
 // Sign in with Google button
 export function SignInButton() {
@@ -7,17 +8,43 @@ export function SignInButton() {
   };
 
   return (
-    <button className="btn-google" onClick={signInWithGoogle}>
+    <Button varient="secondary" sx={styles.button} onClick={signInWithGoogle}>
       <img
         src="https://github.com/fireship-io/next-firebase-course/blob/main/public/google.png?raw=true"
         width="30px"
       />{" "}
       Sign in with Google
-    </button>
+    </Button>
   );
 }
 
 // Sign out button
 export function SignOutButton() {
-  return <button onClick={() => auth.signOut()}>Sign Out</button>;
+  return (
+    <Button
+      varient="secondary"
+      sx={styles.button}
+      onClick={() => auth.signOut()}
+    >
+      Sign Out
+    </Button>
+  );
 }
+
+const styles = {
+  button: {
+    fontSize: "15px",
+    fw: "700",
+    height: "48px",
+    borderRadius: "3px",
+    cursor: "pointer",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    py: "0",
+    backgroundColor: "#000",
+    color: "#fff",
+    ml: "auto",
+    FontFace: "inherit",
+  },
+};
