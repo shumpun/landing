@@ -1,18 +1,14 @@
 import React from "react";
-import { Link } from "components/link";
+import Admin from "sections/admin/admin";
+import { UserContext } from "../../../lib/context";
+import { useUserData } from "../../../lib/hooks";
 
-const admin = () => {
+export default function AdminLogin() {
+  const { isAdmin } = useUserData();
+
   return (
-    <div>
-      <h1>Admin page</h1>
-
-      <Link path="/admin/events">Events</Link>
-      <br />
-      <Link path="/admin/news">News</Link>
-      <br />
-      <Link path="/admin/testimonials">Testimonials</Link>
-    </div>
+    <UserContext.Provider value={{ isAdmin }}>
+      <Admin />
+    </UserContext.Provider>
   );
-};
-
-export default admin;
+}

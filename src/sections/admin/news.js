@@ -4,8 +4,9 @@ import Datetime from "react-datetime";
 import "react-datetime/css/react-datetime.css";
 import toast from "react-hot-toast";
 import { firestore, storage } from "../../../lib/firebase";
+import withAdminAuth from "../../../lib/withAdminAuth";
 
-const Events = () => {
+const News = () => {
   const [title, setTitle] = useState("");
   const [news, setNews] = useState("");
   const [eventImage, setEventImage] = useState(null);
@@ -93,4 +94,4 @@ const Events = () => {
   );
 };
 
-export default Events;
+export default withAdminAuth(News);
