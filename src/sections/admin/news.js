@@ -17,7 +17,7 @@ const News = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(false);
+    setLoading(true);
 
     const uploadRef = storage.ref(`news/${eventImage.name}`);
     await uploadRef.put(eventImage);

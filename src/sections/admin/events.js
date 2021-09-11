@@ -32,7 +32,7 @@ const Events = () => {
     setPerson("");
     setSelectedDate(null);
     setEventImage(null);
-    setLoading(true);
+    setLoading(false);
 
     toast.success("Event created!");
   };
