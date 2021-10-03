@@ -33,7 +33,7 @@ export default {
   },
   danceMovement: {
     text: "These workshops are conducted for Ten weeks with a group of 5-6 children, thrice a year. The main focus of these workshops is to enhance motor functioning and Visual Spatial processing.",
-    img: "1rCZ19O4OE2TWzBWbqyJbX4gojoBFLGs0",
+    img: "1TWHcGwkAoPCV80BJkor8RXG0i9vuZLyK",
     areasDeveloped: [
       "Motor planning",
       "Sequencing",
