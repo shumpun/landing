@@ -6,7 +6,7 @@ export default {
       "Assessment of Life Skills",
     ],
     text: "For children aged 0-5; Special Educators work on special skill sets, as outlined below. The focus of these interventions is development of language, communication skills, relational capacity and cognition.",
-    img: "1rgDiTeBFlve33DKOHFuY7jjlXr_qkJOA",
+    img: "1TWHcGwkAoPCV80BJkor8RXG0i9vuZLyK",
     areasDeveloped: [
       "Organizing Behaviour",
       "Engaging",
