@@ -1,12 +1,13 @@
-import { useContext } from "react";
-import { Heading, Box } from "theme-ui";
-import { UserContext } from "../../../lib/context";
-import { SignInButton, SignOutButton } from "./SignInComponents";
+import { useContext } from 'react';
+import { Heading, Box } from 'theme-ui';
+import { UserContext } from '../../../lib/context';
+import { SignInButton, SignOutButton } from './SignInComponents';
 
-import Events from "./events";
-import News from "./news";
-import Testimonials from "./testimonial";
-import "typeface-dm-sans";
+import Events from './events';
+import News from './news';
+import Testimonials from './testimonial';
+import Members from './members';
+import 'typeface-dm-sans';
 
 export default function Admin(props) {
   const { isAdmin } = useContext(UserContext);
@@ -17,12 +18,14 @@ export default function Admin(props) {
         <>
           <SignOutButton />
           <div>
-            <Heading as="h2">Add a new Event</Heading>
+            <Heading as='h2'>Add a new Event</Heading>
             <Events />
-            <Heading as="h2">Add a new News</Heading>
+            <Heading as='h2'>Add a new News</Heading>
             <News />
-            <Heading as="h2">Add a new Testimonial</Heading>
+            <Heading as='h2'>Add a new Testimonial</Heading>
             <Testimonials />
+            <Heading as='h2'>Add a new Board member</Heading>
+            <Members />
           </div>
         </>
       ) : (
@@ -34,16 +37,16 @@ export default function Admin(props) {
 
 const styles = {
   main: {
-    width: "800px",
-    mx: "auto",
-    fontFamily: "DM Sans",
-    fontFamily: "DM Sans",
+    width: '800px',
+    mx: 'auto',
+    fontFamily: 'DM Sans',
+    fontFamily: 'DM Sans',
 
     h2: {
-      fontFamily: "DM Sans",
-      mx: "auto",
-      my: "40px",
-      textAlign: "center",
+      fontFamily: 'DM Sans',
+      mx: 'auto',
+      my: '40px',
+      textAlign: 'center',
     },
   },
 };

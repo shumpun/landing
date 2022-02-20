@@ -2,26 +2,22 @@ import moment from 'moment';
 import React from 'react';
 import { Box, Text, Heading, Image } from 'theme-ui';
 
-const EventCard = ({ image, title, description, person, date }) => {
+const EventCard = ({ image, name, about }) => {
   return (
     <Box
       sx={styles.blogCard}
       className={`blogCard ${image === null ? 'noThumb ' : ' '} ${
-        description === null ? 'noDescription  ' : ''
+        about === null ? 'noDescription  ' : ''
       } noLabel`}
     >
       {image !== null && (
         <Box sx={styles.image}>
-          <Image src={image} alt={title} />
+          <Image src={image} alt={name} />
         </Box>
       )}
       <Box sx={styles.content} className='blogContent'>
-        <Heading as='h3'>{title}</Heading>
-        {description !== null && <Text as='p'>{description}</Text>}
-        {person !== null && <Text as='p'>{person}</Text>}
-        {date != null && (
-          <Text as='p'>{moment(date).format('DD-MM-YYYY LT')}</Text>
-        )}
+        <Heading as='h3'>{name}</Heading>
+        {about !== null && <Text as='p'>{about}</Text>}
       </Box>
     </Box>
   );
