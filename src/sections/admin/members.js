@@ -39,7 +39,7 @@ const Members = () => {
     setImage(files[0]);
   };
 
-  const isValidForm = () => !!content && !!name && !!image;
+  const isValidForm = () => !!about && !!name && !!image;
 
   return (
     <Box sx={styles.forms} as='form' onSubmit={handleSubmit}>
