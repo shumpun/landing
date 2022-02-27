@@ -12,7 +12,7 @@ const Blogs = ({ events = [] }) => {
   return (
     <Box as="section" id="events" sx={styles.blogs}>
       <Container>
-        <BlockTitle title="Popular events" text="we conducted" />
+        <BlockTitle title="Recent events" text="we conducted" />
         <Box as={Masonry} options={masonryOptions} sx={styles.blogWrapper}>
           {events.map((props, index) => (
             <BlogCard key={index} {...props} />
